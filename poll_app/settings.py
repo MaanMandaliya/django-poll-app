@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
+    'users.apps.UsersConfig',
+    "crispy_forms",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,7 +58,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR,r'polls\templates')
+            os.path.join(BASE_DIR,r'polls\templates\polls'),
+            os.path.join(BASE_DIR,r'users\templates\users')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -116,8 +119,24 @@ USE_L10N = True
 
 USE_TZ = True
 
+#login settings
+LOGIN_REDIRECT_URL = "home"
+LOGIN_URL = "login"
+
+#media path
+MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+MEDIA_URL = "/media/"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#e-mail settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'dashiiit2k17@gmail.com'
+EMAIL_HOST_PASSWORD = 'Qwerty@#$12345'
+
