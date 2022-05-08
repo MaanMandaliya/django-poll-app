@@ -1,1 +1,4 @@
-This repo contains poll application implemented with Django
+#Django Poll Application
+Quiz Application
+
+Technology Stack : Django, Python, HTML, CSS, JavaScript, SQLite3
